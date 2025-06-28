@@ -27,13 +27,21 @@ const NewsLeftCard = ({ image, author, time, title, content, subcontent }) => {
       />
 
       {/* Author & Time */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: 4 , mb: 2 , mt: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 4,
+          mb: 2,
+          mt: 2,
+        }}
+      >
         <Button
           size="small"
           sx={{
             width: "164px",
             height: "48px",
-            backgroundColor: "#2351F5",
+            backgroundColor: "#C8102E",
             color: "#fff",
             borderRadius: "0px",
             px: 3,
@@ -42,28 +50,29 @@ const NewsLeftCard = ({ image, author, time, title, content, subcontent }) => {
             lineHeight: "30px",
           }}
         >
-          {author}
+          By {author}
         </Button>
         <Typography
           sx={{
             fontSize: "16px",
             lineHeight: "30px",
-            color: "#FFFFFF",
+            color: "#CCCCCC",
           }}
         >
-          {time}
+          ⏱ {time}
         </Typography>
       </Box>
 
       {/* Title */}
       <Typography
         sx={{
-          fontSize: "30px",
+          fontSize: "28px",
           fontWeight: 600,
-          lineHeight: "45px",
+          lineHeight: "44px",
+          textShadow: "0px 1px 2px rgba(0,0,0,0.5)",
         }}
       >
-        {title}
+        {title || "Exploring Unreal Engine 5: A Revolution in Gaming Visuals"}
       </Typography>
 
       {/* Description */}
@@ -71,20 +80,22 @@ const NewsLeftCard = ({ image, author, time, title, content, subcontent }) => {
         sx={{
           fontSize: "17px",
           fontWeight: 400,
-          lineHeight: "35px",
-          color: "#FFFFFF",
+          lineHeight: "32px",
+          color: "#DDDDDD",
         }}
       >
-        {content}
+        {content ||
+          "Unreal Engine 5’s Nanite and Lumen systems allow devs to build worlds once thought impossible. Here's how it's reshaping game development in 2025 and beyond."}
       </Typography>
 
+      {/* Optional Subcontent */}
       {subcontent && (
         <Typography
           sx={{
             fontSize: "17px",
             fontWeight: 400,
-            lineHeight: "35px",
-            color: "#FFFFFF",
+            lineHeight: "32px",
+            color: "#BBBBBB",
           }}
         >
           {subcontent}

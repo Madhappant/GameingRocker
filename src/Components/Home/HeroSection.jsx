@@ -1,10 +1,30 @@
-// src/Components/HeroSection.jsx
 import React from 'react';
 import { Button, Container, Typography, Box, Grid } from '@mui/material';
+import { motion } from 'framer-motion';
 import unrealLogo from '../../Assets/unreal 1.png';
 import cryLogo from '../../Assets/cry 1.png';
+import { useNavigate } from 'react-router-dom';
+
+const floatingAnimation = {
+  animate: {
+    x: [0, Math.random() * 300 - 150, Math.random() * 300 - 150, 0],
+    y: [0, Math.random() * 200 - 100, Math.random() * 200 - 100, 0],
+    transition: {
+      duration: 8,
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut"
+    }
+  }
+};
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleGetDetails = () => {
+    navigate('/portfolio'); // Redirect to portfolio or relevant section
+  };
+
   return (
     <Box
       sx={{
@@ -13,10 +33,11 @@ const HeroSection = () => {
         py: 10,
         position: 'relative',
         overflow: 'hidden',
-        height: '80vh',
+        height: '90vh',
+        top: 40,
       }}
     >
-      {/* Full cover background image */}
+      {/* Background Animation Overlay */}
       <Box
         sx={{
           position: 'absolute',
@@ -35,10 +56,10 @@ const HeroSection = () => {
 
       <Container maxWidth={false} sx={{ maxWidth: '1300px', mx: 'auto', position: 'relative', zIndex: 1 }}>
         <Grid container spacing={4} alignItems="center" justifyContent="left">
-          {/* Left Text Block */}
+          {/* Left Content */}
           <Grid item xs={12} md={6}>
-            <Typography variant="subtitle2" sx={{ color: '#FFA500', fontWeight: 600,lineHeight: '155%', }}>
-              Proved By prodesigner
+            <Typography variant="subtitle2" sx={{ color: '#FFA500', fontWeight: 600 }}>
+              Powered by GameRealm Studios
             </Typography>
 
             <Typography
@@ -51,7 +72,7 @@ const HeroSection = () => {
                 color: '#fff',
               }}
             >
-              Work that we <br /> produce for our <br /> clients
+              Creating Immersive <br /> Gaming Experiences <br /> for Every Gamer
             </Typography>
 
             <Typography
@@ -64,12 +85,12 @@ const HeroSection = () => {
                 lineHeight: '155%',
               }}
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry’s standard.
+              Explore a curated collection of indie, AAA, and classic games. Whether you’re a developer or gamer, we bring stories to life with cutting-edge engines and creativity.
             </Typography>
 
-             <Button
+            <Button
               variant="contained"
+              onClick={handleGetDetails}
               sx={{
                 mt: '40px',
                 width: '195px',
@@ -79,25 +100,42 @@ const HeroSection = () => {
                 fontWeight: 600,
                 fontSize: '0.95rem',
                 textTransform: 'none',
+                '&:hover': {
+                  background: 'linear-gradient(90deg, #FF7B00 0%, #FF5B5B 100%)',
+                },
               }}
             >
-              Get more details
+              View Portfolio
             </Button>
           </Grid>
 
-          {/* Right Logos */}
-          <Grid item xs={12} md={6} sx={{ textAlign: 'center' }}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: 4,
-                mt: 2,
+          {/* Right Side Floating Logos */}
+          <Grid item xs={12} md={6} sx={{ position: 'relative', height: 300 }}>
+            <motion.img
+              src={cryLogo}
+              alt="CryEngine"
+              style={{
+                height: 60,
+                position: 'absolute',
+                top: 0,
+                left: 0,
               }}
-            >
-              <Box component="img" src={cryLogo} alt="CryEngine" sx={{ height: 40 }} />
-              <Box component="img" src={unrealLogo} alt="Unreal Engine" sx={{ height: 40 }} />
-            </Box>
+              variants={floatingAnimation}
+              animate="animate"
+            />
+
+            <motion.img
+              src={unrealLogo}
+              alt="Unreal Engine"
+              style={{
+                height: 60,
+                position: 'absolute',
+                bottom: 0,
+                right: 0,
+              }}
+              variants={floatingAnimation}
+              animate="animate"
+            />
           </Grid>
         </Grid>
       </Container>

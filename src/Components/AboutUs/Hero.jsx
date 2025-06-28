@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Tooltip } from "@mui/material";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -15,25 +15,22 @@ const Hero = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "trasnparent",
         minHeight: "100vh",
         position: "relative",
         overflow: "hidden",
         fontFamily: "Poppins, sans-serif",
+        top: 40,
+        backgroundColor: "#0C031C",
       }}
     >
-      {/* Navigation Links (Home > About us) */}
+      {/* Breadcrumbs */}
       <Typography
         variant="body2"
         sx={{
           position: "absolute",
-          width: "109px",
-          height: "25px",
-          left: "110px",
-          top: "104px",
-          fontSize: "16px",
-          fontWeight: 400,
-          lineHeight: "25px",
+          left: 110,
+          top: 104,
+          fontSize: 16,
           color: "#FFFFFF",
         }}
       >
@@ -43,13 +40,9 @@ const Hero = () => {
         variant="body2"
         sx={{
           position: "absolute",
-          width: "109px",
-          height: "25px",
-          left: "176px",
-          top: "104px",
-          fontSize: "16px",
-          fontWeight: 400,
-          lineHeight: "25px",
+          left: 176,
+          top: 104,
+          fontSize: 16,
           color: "#FF4040",
           textDecoration: "underline",
         }}
@@ -57,52 +50,46 @@ const Hero = () => {
         About us
       </Typography>
 
-      {/* Main Heading (Lorem Ipsum is simply dummy text of the printing and.) */}
+      {/* Hero Title */}
       <Typography
         variant="h2"
         sx={{
           position: "absolute",
-          width: "425px",
-          height: "162px",
-          left: "110px",
-          top: "207px",
-          fontSize: "30px",
+          left: 110,
+          top: 207,
+          fontSize: 30,
           fontWeight: 700,
-          lineHeight: "54px",
           color: "#FFFFFF",
+          width: 425,
+          lineHeight: "54px",
         }}
       >
-        Lorem Ipsum is simply dummy text of the printing and.
+        Building the Future of Immersive Gaming
       </Typography>
 
-      {/* Subtext (Lorem Ipsum is simply dummy text of the printing and typesetting industry...) */}
+      {/* Hero Description */}
       <Typography
         variant="body1"
         sx={{
           position: "absolute",
-          width: "414px",
-          height: "95px",
-          left: "110px",
-          top: "414px",
-          fontSize: "15px",
+          left: 110,
+          top: 414,
+          fontSize: 15,
           fontWeight: 400,
           lineHeight: "31px",
           color: "#B0B0B0",
+          width: 414,
         }}
       >
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s.
+        We design and develop high-performance games across PC, console, mobile, and VR/AR — blending innovative storytelling with cutting-edge visuals.
       </Typography>
 
-      {/* Button Group (Get in touch) */}
+      {/* Call to Action Button */}
       <Box
         sx={{
           position: "absolute",
-          width: "176px",
-          height: "47.84px",
-          left: "110px",
-          top: "576.16px",
+          left: 110,
+          top: 576,
         }}
       >
         <Button
@@ -113,7 +100,7 @@ const Hero = () => {
             textTransform: "none",
             padding: "12px 25px",
             borderRadius: "23px",
-            fontSize: "15px",
+            fontSize: 15,
             fontWeight: 500,
             "&:hover": {
               backgroundColor: "#e63c3c",
@@ -124,51 +111,43 @@ const Hero = () => {
         </Button>
       </Box>
 
-      {/* Image Section */}
+      {/* Image Section (Right) */}
       <Box
         sx={{
           position: "absolute",
           width: "50%",
-          right: "0",
-          top: "0",
+          right: 0,
+          top: 0,
           height: "100vh",
           backgroundImage: `url(${images[currentSlide - 1]})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
         }}
       >
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "0px",
-            // right: "640px",
-            color: "#B0B0B0",
-            fontSize: "12px",
-            lineHeight: "1.2",
-            fontFamily: "Arial, sans-serif",
-            width: 98,
-            height: 67,
-            left: "10px",
-          }}
-        >
-          <Typography
-            variant="body2"
+        <Tooltip title="Click to view next featured project">
+          <Box
             onClick={handleSlideChange}
             sx={{
-              background: "grey",
-              p: "10px",
+              position: "absolute",
+              bottom: "15px",
+              left: "15px",
               color: "black",
-
+              background: "rgba(255,255,255,0.7)",
+              px: 2,
+              py: 1,
+              borderRadius: "10px",
               cursor: "pointer",
+              fontWeight: 500,
+              fontSize: 13,
               "&:hover": {
-                color: "#FFFFFF",
+                background: "#FF4040",
+                color: "#fff",
               },
             }}
           >
-            ← {currentSlide} of 2 →
-          </Typography>
-        </Box>
+            ← {currentSlide} of {images.length} →
+          </Box>
+        </Tooltip>
       </Box>
     </Box>
   );

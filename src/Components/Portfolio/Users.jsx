@@ -1,5 +1,11 @@
 import React from "react";
-import { Box, Typography, Avatar, IconButton, Container } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Avatar,
+  IconButton,
+  Container,
+} from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -10,25 +16,25 @@ const users = [
     location: "Warsaw, Poland",
     rating: "4.5",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.",
+      "Working with this studio was an incredible experience. Their attention to detail, fast delivery, and immersive UI/UX game design exceeded our expectations.",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     active: true,
   },
   {
     name: "Yessica Christy",
     location: "Shanxi, China",
-    rating: "4.5",
+    rating: "4.7",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting and",
+      "They built our multiplayer system from scratch and handled backend integration like pros. The gameplay is smooth and the visuals are stunning.",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     active: false,
   },
   {
     name: "Kim Young Jou",
     location: "Seoul, South Korea",
-    rating: "4.5",
+    rating: "4.9",
     review:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "Incredible team! They transformed our game concept into a full-fledged experience with cross-platform support. Highly recommended for indie developers.",
     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     active: false,
   },
@@ -44,17 +50,16 @@ const Users = () => {
           align="center"
           sx={{
             fontFamily: "'Rubik'",
-            fontStyle: "normal",
             fontWeight: 500,
             fontSize: "35px",
             lineHeight: "50px",
-            textAlign: "center",
             color: "#000000",
             mb: 4,
           }}
         >
-          Trusted by Thousands of <br /> Happy Customer
+          Trusted by Thousands of <br /> Happy Gamers & Clients
         </Typography>
+
         <Typography
           align="center"
           sx={{
@@ -66,11 +71,11 @@ const Users = () => {
             fontFamily: "'Poppins', sans-serif",
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum is simply dummy .
+          Our clients love the blend of technical expertise and artistic vision
+          we bring to each game. See what they’re saying.
         </Typography>
 
-        {/* Cards layout */}
+        {/* Testimonial Cards */}
         <Box
           sx={{
             display: "flex",
@@ -78,7 +83,8 @@ const Users = () => {
             alignItems: "center",
             gap: 4,
             width: "1350px",
-            marginLeft: "-100px"
+            marginLeft: "-100px",
+            flexWrap: "wrap",
           }}
         >
           {users.map((user, index) => (
@@ -91,7 +97,6 @@ const Users = () => {
                 backgroundColor: user.active ? "#0F0901" : "#fff",
                 color: user.active ? "#fff" : "#000",
                 borderRadius: "10px",
-                boxSizing: "border-box",
                 px: 3,
                 py: 2,
                 display: "flex",
@@ -99,7 +104,7 @@ const Users = () => {
                 justifyContent: "space-between",
               }}
             >
-              {/* Avatar and Header */}
+              {/* User Info */}
               <Box display="flex" alignItems="center">
                 <Avatar
                   src={user.avatar}
@@ -141,7 +146,7 @@ const Users = () => {
                 </Box>
               </Box>
 
-              {/* Review Text */}
+              {/* Review */}
               <Typography
                 sx={{
                   fontSize: 14,
@@ -156,7 +161,7 @@ const Users = () => {
           ))}
         </Box>
 
-        {/* Bottom controls: dots & arrows */}
+        {/* Navigation Controls */}
         <Box
           sx={{
             display: "flex",
@@ -206,6 +211,7 @@ const Users = () => {
                 height: 48,
                 color: "#C8102E",
               }}
+              onClick={() => console.log("Previous Slide")}
             >
               <ArrowBackIcon />
             </IconButton>
@@ -216,6 +222,7 @@ const Users = () => {
                 height: 48,
                 color: "#fff",
               }}
+              onClick={() => console.log("Next Slide")}
             >
               <ArrowForwardIcon />
             </IconButton>

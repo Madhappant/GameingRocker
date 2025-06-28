@@ -1,4 +1,3 @@
-// src/Components/Portfolio/PortfolioHero.jsx
 import React from "react";
 import { Box, Typography, Grid, Divider, Avatar } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
@@ -9,27 +8,27 @@ const data = [
   {
     icon: <PersonIcon sx={{ color: "#C8102E" }} />,
     count: "90+",
-    label: "Clients",
+    label: "Global Clients",
   },
   {
     icon: <LocationOnIcon sx={{ color: "#C8102E" }} />,
     count: "30+",
-    label: "Countries",
+    label: "Countries Served",
   },
   {
     icon: <ViewListIcon sx={{ color: "#C8102E" }} />,
     count: "50+",
-    label: "Projects",
+    label: "Games Delivered",
   },
 ];
 
 const PortfolioHero = () => {
   return (
-    <Box sx={{ background: "#0C031C", py: 10, px: 2 }}>
+    <Box sx={{ background: "#0C031C", py: 10, px: 2, top: 40, position: "relative" }}>
       <Box sx={{ maxWidth: "1200px", mx: "auto", textAlign: "center" }}>
         {/* Breadcrumb */}
         <Typography sx={{ color: "#fff", fontSize: 14, mb: 1 }}>
-          Home <span style={{ color: "#C8102E" }}>{" > Services"}</span>
+          Home <span style={{ color: "#C8102E" }}>{"> Portfolio"}</span>
         </Typography>
 
         {/* Title */}
@@ -41,13 +40,12 @@ const PortfolioHero = () => {
             mb: 1,
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and.
+          Explore Our Global Gaming Impact
         </Typography>
 
         {/* Subtitle */}
         <Typography sx={{ fontSize: 14, color: "#ccc", mb: 5 }}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
+          From concept to console, we craft immersive gaming experiences for players worldwide.
         </Typography>
 
         {/* Stat Box */}
@@ -86,9 +84,9 @@ const PortfolioHero = () => {
                 >
                   {item.icon}
                 </Avatar>
-                <Box sx={{ flexGrow: 1, textAlign: "center" , px: 2 }}>
+                <Box sx={{ flexGrow: 1, textAlign: "center", px: 2 }}>
                   <Typography
-                    sx={{ color: "#fff", fontWeight: 600, fontSize: "18px" , mb: 1}}
+                    sx={{ color: "#fff", fontWeight: 600, fontSize: "18px", mb: 1 }}
                   >
                     {item.count}
                   </Typography>
@@ -96,7 +94,8 @@ const PortfolioHero = () => {
                     {item.label}
                   </Typography>
                 </Box>
-                {/* Vertical Divider */}
+
+                {/* Divider */}
                 {index < 2 && (
                   <Divider
                     orientation="vertical"

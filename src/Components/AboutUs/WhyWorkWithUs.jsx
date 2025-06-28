@@ -1,6 +1,30 @@
 import React from "react";
 import { Box, Typography, Stack } from "@mui/material";
 
+const cardData = [
+  {
+    tag: "Innovative Design",
+    tagColor: "#B000DC1C",
+    title: "Immersive UI/UX",
+    description:
+      "We design with players in mind. Our immersive UI/UX delivers intuitive navigation and visually stunning experiences for every game genre.",
+  },
+  {
+    tag: "Pro Development",
+    tagColor: "#DC42001C",
+    title: "Optimized Codebase",
+    description:
+      "Our developers write clean, scalable, and performance-optimized code using modern stacks like Unity, Unreal, and React for cross-platform gaming.",
+  },
+  {
+    tag: "Community Focused",
+    tagColor: "#00DC8D1C",
+    title: "Active Support",
+    description:
+      "We believe in building lasting relationships with players. Our active support and feedback loop ensure your voice drives our evolution.",
+  },
+];
+
 const AboutUsCards = () => {
   return (
     <Box
@@ -14,8 +38,6 @@ const AboutUsCards = () => {
       <Typography
         variant="h4"
         sx={{
-          width: "267px",
-          height: 45,
           fontSize: "24px",
           fontWeight: 600,
           lineHeight: "36px",
@@ -25,7 +47,7 @@ const AboutUsCards = () => {
           marginLeft: "40px",
         }}
       >
-        Why work with us
+        Why Work With Us
       </Typography>
 
       {/* Card Container */}
@@ -33,202 +55,69 @@ const AboutUsCards = () => {
         direction="row"
         justifyContent="space-between"
         spacing={3}
-        sx={{ maxWidth: "1300px", margin: "0 auto" }}
+        sx={{ maxWidth: "1300px", margin: "0 auto", flexWrap: "wrap" }}
       >
-        {/* Card 1 */}
-        <Box
-          sx={{
-            backgroundColor: "#FFFFFF",
-            width: "388px",
-            height: "378px",
-            borderRadius: "20px",
-            padding: "20px",
-            boxShadow: "0px 4px 94px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <Typography
-            variant="caption"
+        {cardData.map((card, index) => (
+          <Box
+            key={index}
             sx={{
-              backgroundColor: "#B000DC1C",
-              color: "#000000",
-              padding: "4px 12px",
-              width: "140px",
-              height: "39px",
-              fontSize: "12px",
-              fontWeight: 500,
-              borderRadius: "8px",
-              marginBottom: "20px",
-              display: "inline-block",
-              textAlign: "center",
-              paddingTop: "10px",
-              marginTop: "40px",
-              marginLeft: "20px",
+              backgroundColor: "#FFFFFF",
+              width: "388px",
+              height: "378px",
+              borderRadius: "20px",
+              padding: "20px",
+              boxShadow: "0px 4px 94px rgba(0, 0, 0, 0.1)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "start",
             }}
           >
-            Lorem ipsum
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              width: "133px",
-              height: "38px",
-              fontSize: "20px",
-              fontWeight: 600,
-              lineHeight: "38px",
-              color: "#000000",
-              marginBottom: "40px",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem Ipsum
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              width: "304px",
-              height: "108px",
-              fontSize: "14px",
-              fontWeight: 400,
-              lineHeight: "26px",
-              color: "#333333",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
-          </Typography>
-        </Box>
-
-        {/* Card 2 */}
-        <Box
-          sx={{
-            backgroundColor: "#FFFFFF",
-            width: "388px",
-            height: "378px",
-            borderRadius: "20px",
-            padding: "20px",
-            boxShadow: "0px 4px 94px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <Typography
-            variant="caption"
-            sx={{
-              backgroundColor: "#DC42001C",
-              color: "#000000",
-              padding: "4px 12px",
-              width: "140px",
-              height: "39px",
-              fontSize: "12px",
-              borderRadius: "8px",
-              fontWeight: 500,
-              marginBottom: "20px",
-              display: "inline-block",
-              textAlign: "center",
-              paddingTop: "10px",
-              marginTop: "40px",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem ipsum
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              width: "133px",
-              height: "38px",
-              fontSize: "20px",
-              fontWeight: 600,
-              lineHeight: "38px",
-              color: "#000000",
-              marginBottom: "40px",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem Ipsum
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              width: "304px",
-              height: "108px",
-              fontSize: "14px",
-              fontWeight: 400,
-              lineHeight: "26px",
-              color: "#333333",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
-          </Typography>
-        </Box>
-
-        {/* Card 3 */}
-        <Box
-          sx={{
-            backgroundColor: "#FFFFFF",
-            width: "388px",
-            height: "378px",
-            borderRadius: "20px",
-            padding: "20px",
-            boxShadow: "0px 4px 94px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <Typography
-            variant="caption"
-            sx={{
-              backgroundColor: "#00DC8D1C",
-              color: "#000000",
-              padding: "4px 12px",
-              width: "140px",
-              height: "39px",
-              borderRadius: "8px",
-              fontSize: "12px",
-              fontWeight: 500,
-              marginBottom: "20px",
-              display: "inline-block",
-              textAlign: "center",
-              paddingTop: "10px",
-              marginTop: "40px",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem ipsum
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              width: "133px",
-              height: "38px",
-              fontSize: "20px",
-              fontWeight: 600,
-              lineHeight: "38px",
-              color: "#000000",
-              marginBottom: "40px",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem Ipsum
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              width: "304px",
-              height: "108px",
-              fontSize: "14px",
-              fontWeight: 400,
-              lineHeight: "26px",
-              color: "#333333",
-              marginLeft: "20px",
-            }}
-          >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
-          </Typography>
-        </Box>
+            <Typography
+              variant="caption"
+              sx={{
+                backgroundColor: card.tagColor,
+                color: "#000000",
+                padding: "10px 12px",
+                fontSize: "12px",
+                fontWeight: 500,
+                borderRadius: "8px",
+                display: "inline-block",
+                width: "fit-content",
+                marginBottom: "20px",
+                marginTop: "40px",
+                marginLeft: "20px",
+              }}
+            >
+              {card.tag}
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: "20px",
+                fontWeight: 600,
+                lineHeight: "38px",
+                color: "#000000",
+                marginBottom: "30px",
+                marginLeft: "20px",
+              }}
+            >
+              {card.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: "14px",
+                fontWeight: 400,
+                lineHeight: "26px",
+                color: "#333333",
+                marginLeft: "20px",
+                marginRight: "10px",
+              }}
+            >
+              {card.description}
+            </Typography>
+          </Box>
+        ))}
       </Stack>
     </Box>
   );

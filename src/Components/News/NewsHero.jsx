@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Typography,
@@ -9,6 +9,14 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 
 const NewsHero = () => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
+    // 👉 TODO: Trigger search or filter logic here
+    console.log("Searching for:", e.target.value);
+  };
+
   return (
     <Box
       sx={{
@@ -17,14 +25,14 @@ const NewsHero = () => {
         py: { xs: 8, md: 12 },
         textAlign: "center",
         mx: "auto",
+        top: 40,
       }}
     >
       <Container maxWidth="md">
-        {/* Home > News breadcrumb */}
+        {/* Breadcrumb */}
         <Typography
           sx={{
             fontFamily: "'Poppins', sans-serif",
-            fontStyle: "normal",
             fontWeight: 400,
             fontSize: "16px",
             lineHeight: "208.5%",
@@ -38,7 +46,6 @@ const NewsHero = () => {
         <Typography
           sx={{
             fontFamily: "'Poppins', sans-serif",
-            fontStyle: "normal",
             fontWeight: 600,
             fontSize: "33px",
             lineHeight: "180.5%",
@@ -47,14 +54,13 @@ const NewsHero = () => {
             marginLeft: "-50px",
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and.
+          Stay Updated with the Latest Game Dev News & Insights
         </Typography>
 
         {/* Subheading */}
         <Typography
           sx={{
             fontFamily: "'Poppins', sans-serif",
-            fontStyle: "normal",
             fontWeight: 500,
             fontSize: "16px",
             lineHeight: "187.5%",
@@ -64,20 +70,17 @@ const NewsHero = () => {
             mb: 4,
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
+          Explore behind-the-scenes features, launch updates, design strategies,
+          and expert commentary from the world of interactive entertainment.
         </Typography>
 
         {/* Search Box */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
           <TextField
-            placeholder="Search"
+            placeholder="Search articles, dev logs, or updates..."
             variant="outlined"
+            value={searchValue}
+            onChange={handleSearch}
             sx={{
               width: 400,
               height: 49,

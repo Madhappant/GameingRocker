@@ -1,6 +1,5 @@
-// src/Components/Footer.jsx
 import React from 'react';
-import { Box, Typography, Grid, IconButton, Divider } from '@mui/material';
+import { Box, Typography, Grid, IconButton, Divider, Link } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -8,12 +7,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: '#fff', px: { xs: 2, md: 10 }, py: 4 }}>
-      {/* Top Section */}
-
-        {/* Grid layout for 4 sections */}
+    <Box sx={{ backgroundColor: '#fff', px: { xs: 2, md: 10 }, py: 6 }}>
       <Grid container spacing={4} justifyContent="space-between">
-        {/* Logo & Description */}
+        {/* Brand Logo & Description */}
         <Grid item xs={12} sm={6} md={3}>
           <Typography
             sx={{
@@ -22,9 +18,10 @@ const Footer = () => {
               lineHeight: '153.5%',
               color: '#000000',
               mb: 2,
+              fontFamily: 'Poppins',
             }}
           >
-            LOGO
+            GAMEREALM
           </Typography>
           <Typography
             sx={{
@@ -36,7 +33,7 @@ const Footer = () => {
               maxWidth: '372px',
             }}
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Discover and explore a world of top-tier games. GAMEREALM brings the best of gaming content to your fingertips.
           </Typography>
           <Typography
             sx={{
@@ -46,7 +43,7 @@ const Footer = () => {
               color: '#000000',
             }}
           >
-            @Lorem
+            contact@gamerealm.com
           </Typography>
         </Grid>
 
@@ -61,20 +58,24 @@ const Footer = () => {
               mb: 2,
             }}
           >
-            About us
+            About
           </Typography>
-          {['Zeux', 'Portfolio', 'Careers', 'Contact us'].map((item, index) => (
-            <Typography
+          {['Home', 'Explore Games', 'Careers', 'Contact Us'].map((item, index) => (
+            <Link
               key={index}
+              href="/"
+              underline="none"
               sx={{
+                display: 'block',
                 fontWeight: 400,
                 fontSize: '16px',
                 lineHeight: '30px',
                 color: '#000000',
+                '&:hover': { textDecoration: 'underline' },
               }}
             >
               {item}
-            </Typography>
+            </Link>
           ))}
         </Grid>
 
@@ -89,7 +90,7 @@ const Footer = () => {
               mb: 2,
             }}
           >
-            Contact us
+            Contact Us
           </Typography>
           <Typography
             sx={{
@@ -101,20 +102,22 @@ const Footer = () => {
               maxWidth: '282px',
             }}
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Got questions or feedback? Reach out to our support team — we're here to help!
           </Typography>
-          <Typography
+          <Link
+            href="tel:+918888888888"
             sx={{
               fontWeight: 400,
               fontSize: '16px',
               lineHeight: '24px',
               color: '#000000',
+              textDecoration: 'none',
+              '&:hover': { textDecoration: 'underline' },
             }}
           >
-            +908 89097 890
-          </Typography>
+            +91 88888 88888
+          </Link>
         </Grid>
-
 
         {/* Social Icons */}
         <Grid item xs={12} sm={6} md={3}>
@@ -127,9 +130,18 @@ const Footer = () => {
               mt: { xs: 4, md: 10 },
             }}
           >
-            {[FacebookIcon, InstagramIcon, TwitterIcon, LinkedInIcon].map((Icon, index) => (
+            {[
+              { icon: FacebookIcon, href: 'https://facebook.com' },
+              { icon: InstagramIcon, href: 'https://instagram.com' },
+              { icon: TwitterIcon, href: 'https://twitter.com' },
+              { icon: LinkedInIcon, href: 'https://linkedin.com' },
+            ].map(({ icon: Icon, href }, index) => (
               <IconButton
                 key={index}
+                component="a"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   backgroundColor: '#000',
                   color: '#fff',
@@ -150,9 +162,9 @@ const Footer = () => {
       </Grid>
 
       {/* Divider */}
-      <Divider sx={{ my: 5, borderColor: '#000', width: '1550px' , marginLeft: "-80px"}} />
+      <Divider sx={{ my: 5, borderColor: '#000' }} />
 
-      {/* Bottom copyright */}
+      {/* Copyright */}
       <Typography
         sx={{
           fontSize: '14px',
@@ -162,7 +174,7 @@ const Footer = () => {
           textAlign: 'center',
         }}
       >
-        Copyright ® 2025 prodesigner All rights Reserved
+        © 2025 GAMEREALM. All rights reserved.
       </Typography>
     </Box>
   );

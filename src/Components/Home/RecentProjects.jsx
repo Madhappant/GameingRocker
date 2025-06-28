@@ -1,7 +1,8 @@
-// src/Components/Home/RecentProjects.jsx
 import React from "react";
 import { Box, Typography, Grid, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
+// Replace with actual imported images or optimized CDN links
 const projectImages = [
   require("../../Assets/Rectangle 15.png"),
   require("../../Assets/Rectangle 16.png"),
@@ -12,17 +13,21 @@ const projectImages = [
 ];
 
 const RecentProjects = () => {
+  const navigate = useNavigate();
+
+  const handleSeeAll = () => {
+    navigate("/portfolio"); // or another dedicated page like "/projects"
+  };
+
   return (
     <Box
       sx={{
         backgroundColor: "#0B0320",
-        width: "1380px",
-        height: "858px",
+        maxWidth: "1380px",
         mx: "auto",
-        mt: "80px", // mimic top: 3480px if needed
+        py: 8,
         textAlign: "center",
-
-        py: 5,
+        px: { xs: 2, md: 4 },
       }}
     >
       {/* Title */}
@@ -46,29 +51,24 @@ const RecentProjects = () => {
           fontWeight: 400,
           fontSize: "14px",
           lineHeight: "26px",
-          color: "#FFFFFF",
-          maxWidth: "497px",
+          color: "#CCCCCC",
+          maxWidth: "520px",
           mx: "auto",
-          marginBottom: 6,
+          mb: 6,
         }}
       >
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        Take a look at some of the most exciting and innovative games we've built
+        using Unreal Engine, CryEngine, and Unity — optimized for players worldwide.
       </Typography>
 
-      {/* Project Images Grid */}
-      <Grid
-        container
-        spacing={{ xs: 3, md: 4 }}
-        justifyContent="center"
-        alignItems="center"
-      >
+      {/* Project Grid */}
+      <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
         {projectImages.map((img, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Box
               component="img"
               src={img}
-              alt={`project-${index}`}
+              alt={`project-${index + 1}`}
               sx={{
                 width: "100%",
                 height: "223px",
@@ -85,13 +85,14 @@ const RecentProjects = () => {
         ))}
       </Grid>
 
-      {/* SEE ALL Button */}
+      {/* CTA Button */}
       <Button
+        onClick={handleSeeAll}
         variant="contained"
         sx={{
           mt: 8,
           px: 4,
-          py: 1.2,
+          py: 1.5,
           fontFamily: "Poppins",
           fontWeight: 600,
           fontSize: "14px",

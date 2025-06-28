@@ -1,6 +1,12 @@
-// src/Components/Portfolio/PortfolioCardOne.jsx
 import React from "react";
-import { Box, Typography, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import {
+  Box,
+  Typography,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
@@ -10,13 +16,13 @@ const PortfolioCardOne = () => {
       sx={{
         background: "transparent",
         position: "relative",
-        height: "630px", 
+        height: "630px",
       }}
     >
       <Box
         sx={{
           position: "absolute",
-          top: "0px", 
+          top: "0px",
           left: 0,
           width: "1300px",
           mx: "auto",
@@ -28,21 +34,21 @@ const PortfolioCardOne = () => {
             height: "600px",
           }}
         >
-          {/* Image with Play Icon */}
+          {/* Game GIF with Play Icon */}
           <Box
             sx={{
               position: "absolute",
               width: "726px",
               height: "489px",
-              left: "109px", 
+              left: "109px",
               top: "55px",
               borderRadius: 12,
               overflow: "hidden",
             }}
           >
             <img
-              src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDZmZzIxd2o1dG9xYmVqdnJvcHNtZjh5ZWNjaTF3cTB2ODFsNXB1MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NIg3yxgxKEPo2eGmFL/giphy.gif" 
-              alt="Doom"
+              src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDZmZzIxd2o1dG9xYmVqdnJvcHNtZjh5ZWNjaTF3cTB2ODFsNXB1MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NIg3yxgxKEPo2eGmFL/giphy.gif"
+              alt="Gameplay preview"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
             <PlayCircleOutlineIcon
@@ -57,50 +63,64 @@ const PortfolioCardOne = () => {
             />
           </Box>
 
-          {/* Text with Checklist */}
+          {/* Description Section */}
           <Typography
             sx={{
               position: "absolute",
               width: "472px",
-              height: "90px",
-              left: "953px", 
+              left: "953px",
               top: "55px",
               fontFamily: "Poppins",
-              fontStyle: "normal",
               fontWeight: 500,
               fontSize: "30px",
               lineHeight: "45px",
               color: "#FFFFFF",
             }}
           >
-            Lorem Ipsum is simply <br /> dummy text.
+            DOOM: Eternal Inferno
           </Typography>
+
           <Typography
             sx={{
               position: "absolute",
               width: "536px",
-              height: "159px",
               left: "953px",
               top: "180px",
               fontFamily: "Poppins",
-              fontStyle: "normal",
               fontWeight: 400,
               fontSize: "17px",
               lineHeight: "26px",
               color: "#CCCCCC",
             }}
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum is simply dummy .
+            Experience the ultimate fast-paced, demon-slaying mayhem. Designed
+            for thrill seekers and FPS veterans, DOOM: Eternal Inferno pushes
+            visuals, speed, and chaos to new heights.
           </Typography>
-          <List dense disablePadding sx={{ position: "absolute", width: "536px", left: "953px", top: "380px" }}>
-            {[1, 2, 3, 4].map((item, index) => (
+
+          {/* Features List */}
+          <List
+            dense
+            disablePadding
+            sx={{
+              position: "absolute",
+              width: "536px",
+              left: "953px",
+              top: "380px",
+            }}
+          >
+            {[
+              "Hyper-fast combat mechanics",
+              "Real-time lighting and particle effects",
+              "Multiplayer deathmatch and co-op mode",
+              "Built with Unreal Engine 5",
+            ].map((text, index) => (
               <ListItem key={index} disableGutters sx={{ py: 0.5 }}>
                 <ListItemIcon sx={{ minWidth: 32 }}>
                   <CheckCircleIcon sx={{ color: "#00D563", fontSize: 18 }} />
                 </ListItemIcon>
                 <ListItemText
-                  primary="Lorem Ipsum is simply"
+                  primary={text}
                   primaryTypographyProps={{
                     sx: { fontSize: 14, color: "#ccc" },
                   }}

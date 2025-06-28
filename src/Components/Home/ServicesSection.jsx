@@ -1,9 +1,8 @@
-// src/Components/Home/ServicesSection.jsx
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-// Icon images
+// Icons
 import MobileIcon from "../../Assets/smartphone.png";
 import PCIcon from "../../Assets/PC.png";
 import PS4Icon from "../../Assets/PS4.png";
@@ -11,93 +10,95 @@ import ARVRIcon from "../../Assets/vr-glasses 1.png";
 import ARDesignIcon from "../../Assets/VR.png";
 import Model3DIcon from "../../Assets/3d-cube 1.png";
 
+// Define available services
 const services = [
   { icon: MobileIcon, label: "Mobile Game Development" },
   { icon: PCIcon, label: "PC Game Development" },
   { icon: PS4Icon, label: "PS4 Game Development" },
-  { icon: ARVRIcon, label: "AR/VR Solutions" },
-  { icon: ARDesignIcon, label: "AR / VR design" },
-  { icon: Model3DIcon, label: "3D Modelings" },
+  { icon: ARVRIcon, label: "AR/VR Experiences" },
+  { icon: ARDesignIcon, label: "Immersive UI/UX Design" },
+  { icon: Model3DIcon, label: "3D Modeling & Assets" },
 ];
 
 const ServicesSection = () => {
+  const handleServiceClick = (label) => {
+    alert(`More info coming soon for: ${label}`);
+    // In real app: navigate(`/services/${label.toLowerCase().replace(/\s+/g, '-')}`)
+  };
+
   return (
     <Box
       sx={{
-        width: "1545px",
-        height: "696px",
-        left: "198px",
-        top: "2608px",
+        width: "100%",
         backgroundImage: `url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2NoYnhvd2M2eTlzMHM2cTVoZWVjempieWVsc2Jiem14czV0MTNzMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vVwv7I87uB9gZ7avim/giphy.gif)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         textAlign: "center",
         color: "#fff",
-        paddingTop: "40px",
-        zIndex: 1,
+        py: { xs: 8, md: 10 },
+        px: { xs: 2, md: 6 },
       }}
     >
       {/* Heading */}
       <Typography
         sx={{
           fontFamily: "Poppins",
-          fontStyle: "normal",
           fontWeight: 700,
           fontSize: "30px",
-          lineHeight: "180%", 
-          textAlign: "center",
-          color: "#FFFFFF",
-          maxWidth: "826px",
+          lineHeight: "150%",
+          maxWidth: "820px",
           mx: "auto",
-          mb: 3,
+          mb: 2,
         }}
       >
-        Lorem Ipsum is simply dummy text of the printing <br />
-        and typesetting industry.
+        Services Tailored for Modern Game Development
       </Typography>
 
       {/* Subheading */}
       <Typography
         sx={{
           fontFamily: "Poppins",
-          fontStyle: "normal",
           fontWeight: 400,
           fontSize: "16px",
-          lineHeight: "30px", 
-          textAlign: "center",
-          color: "#FFFFFF",
-          maxWidth: "820px",
+          lineHeight: "28px",
+          color: "#DDDDDD",
+          maxWidth: "760px",
           mx: "auto",
           mb: 6,
         }}
       >
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s,
+        From mobile apps to immersive VR worlds, our game studio builds experiences
+        that captivate players across platforms with cutting-edge visuals and performance.
       </Typography>
 
-      {/* Services Grid: 3 columns, 2 rows */}
+      {/* Services Grid */}
       <Grid
         container
-        spacing={12}
+        spacing={5}
         justifyContent="center"
-        maxWidth="960px"
+        maxWidth="1000px"
         mx="auto"
       >
         {services.map((service, index) => (
           <Grid
             item
             xs={12}
-            sm={4}
-            md={2}
+            sm={6}
+            md={4}
             key={index}
             sx={{ display: "flex", justifyContent: "center" }}
           >
             <Box
+              onClick={() => handleServiceClick(service.label)}
               sx={{
+                cursor: "pointer",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)",
+                },
               }}
             >
               {/* Icon Circle */}
@@ -124,7 +125,7 @@ const ServicesSection = () => {
               {/* Label */}
               <Typography
                 sx={{
-                  fontSize: "13.8px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: "Poppins",
                   textAlign: "center",
@@ -135,7 +136,7 @@ const ServicesSection = () => {
                 {service.label}
               </Typography>
 
-              {/* Arrow Icon */}
+              {/* Arrow */}
               <ArrowForwardIcon
                 sx={{
                   color: "#FF2E51",

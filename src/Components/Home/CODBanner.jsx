@@ -1,20 +1,17 @@
-// src/Components/Home/CODBanner.jsx
 import React from "react";
 import { Box, Typography } from "@mui/material";
-// import codImage from "../../Assets/Rectangle 4.png";
-
 
 const CODBanner = () => {
   return (
     <Box sx={{ backgroundColor: "#0C031C", py: 10 }}>
       <Box sx={{ maxWidth: '1300px', mx: 'auto', px: 2, position: 'relative' }}>
-        {/* Top Heading */}
+        {/* Title */}
         <Typography
           sx={{
             fontFamily: 'Poppins',
             fontWeight: 600,
             fontSize: '35px',
-            lineHeight: '66px', // 187.5%
+            lineHeight: '66px',
             textAlign: 'center',
             color: '#FFFFFF',
             width: '826px',
@@ -22,10 +19,10 @@ const CODBanner = () => {
             mb: '80px',
           }}
         >
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Immersive AAA Game Development That Redefines Realism
         </Typography>
 
-        {/* Text + Dots */}
+        {/* Content Block */}
         <Box
           sx={{
             display: 'flex',
@@ -35,8 +32,8 @@ const CODBanner = () => {
             mb: 4,
           }}
         >
-          {/* Left Text */}
-          <Box sx={{ width: '545px' , paddingY: 3 }}>
+          {/* Text Block */}
+          <Box sx={{ width: '545px', paddingY: 3 }}>
             <Typography
               sx={{
                 fontFamily: 'Poppins',
@@ -47,7 +44,7 @@ const CODBanner = () => {
                 mb: 2,
               }}
             >
-              Lorem Ipsum
+              Tactical Shooters, Real-Time Action
             </Typography>
             <Typography
               sx={{
@@ -58,33 +55,32 @@ const CODBanner = () => {
                 color: '#FFFFFF',
               }}
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s,
+              Our development team specializes in crafting realistic and adrenaline-pumping shooter games inspired by legendary franchises like Call of Duty. From motion capture to photorealistic environments, we bring your action vision to life.
             </Typography>
           </Box>
 
-          {/* Red Dot Grid Overlay - half in and half out of image */}
+          {/* Red Dot Overlay */}
           <Box
             sx={{
               width: "196px",
               height: "154px",
               position: "absolute",
               right: "120px",
-              top: "120%", 
-              transform: "translateY(-50%)", 
-              backgroundImage: "radial-gradient(red 3px, transparent 3px)",
+              top: "120%",
+              transform: "translateY(-50%)",
+              backgroundImage: "radial-gradient(#FF2E51 3px, transparent 3px)",
               backgroundSize: "20px 20px",
               zIndex: 2,
+              opacity: 0.8,
             }}
           />
         </Box>
 
-        {/* COD Image */}
+        {/* Game Image / Cinematic Preview */}
         <Box
           component="img"
           src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG82d256cWdmMHc0ZW1qdGQ5aDJhbThueHAyam5lN3g2aTdqMDk3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2BNr7wXVEwrJXFug4v/giphy.gif"
-          alt="Call of Duty"
+          alt="Call of Duty Cinematic"
           sx={{
             width: "100%",
             height: "auto",
@@ -92,6 +88,7 @@ const CODBanner = () => {
             zIndex: 1,
             borderRadius: "8px",
             position: "relative",
+            boxShadow: "0px 4px 20px rgba(255, 46, 81, 0.3)",
           }}
         />
       </Box>

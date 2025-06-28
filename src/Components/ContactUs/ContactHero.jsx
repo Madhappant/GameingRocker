@@ -1,178 +1,5 @@
-// import React from "react";
-// import { Box, Typography, Divider } from "@mui/material";
-// import LocationOnIcon from "@mui/icons-material/LocationOn";
-// import PhoneIcon from "@mui/icons-material/Phone";
-// import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-// const ContactUsHero = () => {
-//   return (
-//     <Box
-//       sx={{
-//         background: "transparent",
-//         color: "#FFFFFF",
-//         py: 10,
-//         px: 2,
-//         position: "relative",
-//         fontFamily: '"Poppins", sans-serif',
-//       }}
-//     >
-//       {/* Ellipse Dot */}
-//       <FiberManualRecordIcon
-//         sx={{
-//           position: "absolute",
-//           top: "241px",
-//           left: "1305px",
-//           color: "#F9D6FF",
-//           fontSize: "9px",
-//         }}
-//       />
-
-//       {/* Breadcrumb */}
-//       <Typography
-//         sx={{
-//           textAlign: "center",
-//           fontSize: "16px",
-//           fontWeight: 400,
-//           lineHeight: "33.36px",
-//           mb: 1,
-//         }}
-//       >
-//         Home <span style={{ color: "#DC7000" }}>{">"} Contact us</span>
-//       </Typography>
-
-//       {/* Title */}
-//       <Typography
-//         sx={{
-//           textAlign: "center",
-//           fontSize: "33px",
-//           fontWeight: 600,
-//           lineHeight: "59.57px",
-//           mb: 2,
-//         }}
-//       >
-//         Lorem Ipsum is simply dummy text of the printing and.
-//       </Typography>
-
-//       {/* Subtext */}
-//       <Typography
-//         sx={{
-//           textAlign: "center",
-//           fontSize: "16px",
-//           fontWeight: 500,
-//           lineHeight: "30px",
-//           color: "#FFFFFF",
-//           maxWidth: 600,
-//           mx: "auto",
-//         }}
-//       >
-//         Lorem Ipsum is simply dummy text of the printing and typesetting
-//         industry.
-//       </Typography>
-
-//       {/* World Map Image */}
-//       <Box
-//         component="img"
-//         src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjc5NjdlaWg1N3Nndm41eTg4MTdycTJ6bGttcWE0eWtnZ2V2Nnp4dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3ov9jYkVbdGMo6UcG4/giphy.gif" // ✅ make sure this image is placed in public/images folder
-//         alt="world map"
-//         sx={{
-//           width: "1060px",
-//           height: "540px",
-//           mt: 6,
-//           mx: "auto",
-//           display: "block",
-//           border: "2px solid #00AEEF", // optional: border to match image in screenshot
-//           borderRadius: "8px",
-//         }}
-//       />
-
-//       {/* Footer Info Section */}
-//       <Box
-//         sx={{
-//           mt: 6,
-//           display: "flex",
-//           justifyContent: "space-between",
-//           flexWrap: "wrap",
-//           px: { xs: 4, md: 12 },
-//           height: "100px",
-//         }}
-//       >
-//         {/* Follow us */}
-//         <Box>
-//           <Typography
-//             sx={{
-//               fontSize: "16px",
-//               lineHeight: "189.5%",
-//               color: "#FFFFFF",
-//               mb: 1,
-//             }}
-//           >
-//             Follow us
-//           </Typography>
-//           <Box
-//             sx={{
-//               display: "flex",
-//               alignItems: "center",
-//               gap: 2,
-//               height: "80px",
-//             }}
-//           >
-//             <FacebookIcon sx={{ color: "#fff", fontSize: "32px" }} />
-//             <InstagramIcon sx={{ color: "#fff", fontSize: "32px" }} />
-//             <TwitterIcon sx={{ color: "#fff", fontSize: "32px" }} />
-//             <LinkedInIcon sx={{ color: "#fff", fontSize: "32px" }} />
-//           </Box>
-//         </Box>
-
-//         {/* Divider */}
-//         <Divider
-//           orientation="vertical"
-//           flexItem
-//           sx={{ backgroundColor: "#ffffff", mx: 4 }}
-//         />
-
-//         {/* Phone */}
-//         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-//           <PhoneIcon sx={{ color: "#ffffff", fontSize: "32px" }} />
-//           <Typography sx={{ fontSize: "16px", color: "#ffffff" }}>
-//             +94 4444 5555 6
-//           </Typography>
-//         </Box>
-
-//         {/* Divider */}
-//         <Divider
-//           orientation="vertical"
-//           flexItem
-//           sx={{ backgroundColor: "#ffffff", mx: 4 }}
-//         />
-
-//         {/* Location */}
-//         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-//           <LocationOnIcon sx={{ color: "#ffffff", fontSize: "32px" }} />
-//           <Typography
-//             sx={{
-//               fontSize: "16px",
-//               color: "#ffffff",
-//               lineHeight: "24px",
-//               fontWeight: 300,
-//               maxWidth: "320px",
-//             }}
-//           >
-//             but also the leap into electronic typesetting
-//           </Typography>
-//         </Box>
-//       </Box>
-//     </Box>
-//   );
-// };
-
-// export default ContactUsHero;
-
 import React, { useState } from "react";
-import { Box, Typography, Divider } from "@mui/material";
+import { Box, Typography, Divider, Chip } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
@@ -187,7 +14,7 @@ const ContactUsHero = () => {
 
   const gameStats = {
     India: {
-      topGames: ["Free Fire", "PUBG", "Ludo King"],
+      topGames: ["Free Fire", "BGMI", "Valorant"],
       installs: 120000,
       users: 95000,
     },
@@ -196,6 +23,47 @@ const ContactUsHero = () => {
       installs: 150000,
       users: 125000,
     },
+    Germany: {
+      topGames: ["Clash Royale", "PUBG", "League of Legends"],
+      installs: 95000,
+      users: 86000,
+    },
+    Japan: {
+      topGames: ["Genshin Impact", "Monster Hunter", "Fate/Grand Order"],
+      installs: 110000,
+      users: 99000,
+    },
+    Brazil: {
+      topGames: ["Free Fire", "FIFA", "Clash of Clans"],
+      installs: 100000,
+      users: 87000,
+    },
+    Australia: {
+      topGames: ["Among Us", "Valorant", "Roblox"],
+      installs: 87000,
+      users: 81000,
+    },
+    Canada: {
+      topGames: ["Call of Duty", "Rocket League", "Fortnite"],
+      installs: 92000,
+      users: 88000,
+    },
+    SouthKorea: {
+      topGames: ["Overwatch", "StarCraft", "League of Legends"],
+      installs: 108000,
+      users: 97000,
+    },
+  };
+
+  const mapCoordinates = {
+    India: { top: "46.7%", left: "68.4%" },
+    USA: { top: "38%", left: "23%" },
+    Germany: { top: "30%", left: "50%" },
+    Japan: { top: "40%", left: "85%" },
+    Brazil: { top: "62%", left: "28%" },
+    Australia: { top: "75%", left: "90%" },
+    Canada: { top: "25%", left: "22%" },
+    SouthKorea: { top: "33%", left: "80%" },
   };
 
   return (
@@ -207,44 +75,40 @@ const ContactUsHero = () => {
         px: 2,
         position: "relative",
         fontFamily: '"Poppins", sans-serif',
+        top: 40,
       }}
     >
-      {/* Ellipse 2 */}
       <FiberManualRecordIcon
         sx={{
           position: "absolute",
-          top: "241px",
-          left: "1305px",
+          top: "131px",
+          left: "1375px",
           color: "#F9D6FF",
           fontSize: "9px",
         }}
       />
 
-      {/* Breadcrumb */}
       <Typography sx={{ textAlign: "center", fontSize: "16px", fontWeight: 400, mb: 1 }}>
         Home <span style={{ color: "#DC7000" }}>{">"} Contact us</span>
       </Typography>
 
-      {/* Title */}
-      <Typography sx={{ textAlign: "center", fontSize: "33px", fontWeight: 600, mb: 2 }}>
-        Lorem Ipsum is simply dummy text of the printing and.
+      <Typography sx={{ textAlign: "center", fontSize: "33px", fontWeight: 700, mb: 2, textTransform: "uppercase", letterSpacing: 1 }}>
+        Connect With Gamers Worldwide
       </Typography>
 
-      {/* Subtitle */}
       <Typography
         sx={{
           textAlign: "center",
           fontSize: "16px",
           fontWeight: 500,
-          color: "#FFFFFF",
+          color: "#A0A0A0",
           maxWidth: 600,
           mx: "auto",
         }}
       >
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Join our global community and explore trending games in every region.
       </Typography>
 
-      {/* 🌍 GTM MAP BOX */}
       <Box
         sx={{
           width: "1060px",
@@ -252,65 +116,63 @@ const ContactUsHero = () => {
           mt: 6,
           mx: "auto",
           position: "relative",
-          borderRadius: "6px",
+          borderRadius: "12px",
+          overflow: "hidden",
           backgroundImage: `url(${mapImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* 🔴 MAP POINT - INDIA */}
-        <Box
-          onMouseEnter={() => setHoveredRegion("India")}
-          onMouseLeave={() => setHoveredRegion(null)}
-          sx={{
-            position: "absolute",
-            top: "46.7%",
-            left: "68.4%",
-            width: "18px",
-            height: "18px",
-            backgroundColor: "#fff",
-            borderRadius: "50%",
-            border: "6px solid #D80027",
-            cursor: "pointer",
-          }}
-        />
+        {Object.entries(mapCoordinates).map(([region, coords]) => (
+          <Box
+            key={region}
+            onMouseEnter={() => setHoveredRegion(region)}
+            onMouseLeave={() => setHoveredRegion(null)}
+            sx={{
+              position: "absolute",
+              top: coords.top,
+              left: coords.left,
+              width: "18px",
+              height: "18px",
+              backgroundColor: "#ffffff",
+              borderRadius: "50%",
+              border: "4px solid #D80027",
+              transition: "transform 0.3s",
+              cursor: "pointer",
+              '&:hover': {
+                transform: "scale(1.4)",
+                backgroundColor: "#D80027",
+              },
+            }}
+          />
+        ))}
 
-        {/* 🔵 MAP POINT - USA */}
-        <Box
-          onMouseEnter={() => setHoveredRegion("USA")}
-          onMouseLeave={() => setHoveredRegion(null)}
-          sx={{
-            position: "absolute",
-            top: "38%",
-            left: "23%",
-            width: "18px",
-            height: "18px",
-            backgroundColor: "transparent",
-            borderRadius: "50%",
-            border: "6px solid #D80027",
-            cursor: "pointer",
-          }}
-        />
-
-        {/* 🧾 TOOLTIP */}
         {hoveredRegion && gameStats[hoveredRegion] && (
           <Box
             sx={{
               position: "absolute",
-              top: "5%",
+              top: "10%",
               left: "5%",
-              backgroundColor: "#fff",
-              color: "#000",
-              p: 2,
-              borderRadius: "8px",
+              backgroundColor: "#1a1a1a",
+              color: "#ffffff",
+              p: 3,
+              borderRadius: "10px",
               zIndex: 10,
-              boxShadow: 3,
+              boxShadow: 6,
+              width: 280,
             }}
           >
-            <Typography fontWeight={600}>{hoveredRegion} Stats</Typography>
-            <Typography variant="body2">
-              <strong>Top Games:</strong> {gameStats[hoveredRegion].topGames.join(", ")}
+            <Typography fontWeight={600} fontSize="18px" color="#DC7000" mb={1}>
+              {hoveredRegion} Stats
             </Typography>
+            <Typography variant="body2" mb={1}>
+              <strong>Top Games:</strong>
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 1 }}>
+              {gameStats[hoveredRegion].topGames.map((game, idx) => (
+                <Chip key={idx} label={game} color="primary" variant="outlined" sx={{ fontSize: "12px" }} />
+              ))}
+            </Box>
             <Typography variant="body2">
               <strong>Installs:</strong> {gameStats[hoveredRegion].installs.toLocaleString()}
             </Typography>
@@ -321,7 +183,6 @@ const ContactUsHero = () => {
         )}
       </Box>
 
-      {/* Footer Row */}
       <Box
         sx={{
           mt: 6,
@@ -333,41 +194,38 @@ const ContactUsHero = () => {
           marginLeft: "-20px",
         }}
       >
-        {/* Follow us */}
         <Box>
           <Typography sx={{ fontSize: "16px", mb: 1 }}>Follow us</Typography>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2, height: "80px" }}>
-            <FacebookIcon sx={{ color: "#fff", fontSize: "40px" }} />
-            <InstagramIcon sx={{ color: "#fff", fontSize: "40px" }} />
-            <TwitterIcon sx={{ color: "#fff", fontSize: "40px" }} />
-            <LinkedInIcon sx={{ color: "#fff", fontSize: "40px" }} />
+            <FacebookIcon sx={{ color: "#fff", fontSize: "32px" }} />
+            <InstagramIcon sx={{ color: "#fff", fontSize: "32px" }} />
+            <TwitterIcon sx={{ color: "#fff", fontSize: "32px" }} />
+            <LinkedInIcon sx={{ color: "#fff", fontSize: "32px" }} />
           </Box>
         </Box>
 
         <Divider orientation="vertical" flexItem sx={{ backgroundColor: "#ffffff", mx: 6 }} />
 
-        {/* Phone */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 4 }}>
-          <PhoneIcon sx={{ color: "#ffffff", fontSize: "40px" }} />
+          <PhoneIcon sx={{ color: "#ffffff", fontSize: "32px" }} />
           <Typography sx={{ fontSize: "14px", color: "#ffffff" }}>
-            +94 4444 5556
+            +91 98765 43210
           </Typography>
         </Box>
 
         <Divider orientation="vertical" flexItem sx={{ backgroundColor: "#ffffff", mx: 1 }} />
 
-        {/* Location */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-          <LocationOnIcon sx={{ color: "#ffffff", fontSize: "40px" }} />
+          <LocationOnIcon sx={{ color: "#ffffff", fontSize: "32px" }} />
           <Typography
             sx={{
-              fontSize: "20px",
+              fontSize: "16px",
               color: "#ffffff",
               fontWeight: 300,
               width: "340px",
             }}
           >
-            but also the leap into electronic typesetting
+            HQ: Level 2, CyberHub, Bengaluru, India
           </Typography>
         </Box>
       </Box>
