@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, IconButton, Divider, Link } from '@mui/material';
+import { Box, Typography, Grid, Divider, Link } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -119,7 +119,7 @@ const Footer = () => {
           </Link>
         </Grid>
 
-        {/* Social Icons */}
+        {/* Social Icons with Tooltip Animation */}
         <Grid item xs={12} sm={6} md={3}>
           <Box
             sx={{
@@ -131,31 +131,91 @@ const Footer = () => {
             }}
           >
             {[
-              { icon: FacebookIcon, href: 'https://facebook.com' },
-              { icon: InstagramIcon, href: 'https://instagram.com' },
-              { icon: TwitterIcon, href: 'https://twitter.com' },
-              { icon: LinkedInIcon, href: 'https://linkedin.com' },
-            ].map(({ icon: Icon, href }, index) => (
-              <IconButton
+              {
+                icon: FacebookIcon,
+                href: 'https://facebook.com',
+                label: 'Facebook',
+                bgColor: '#1877f2',
+              },
+              {
+                icon: InstagramIcon,
+                href: 'https://instagram.com',
+                label: 'Instagram',
+                bgColor: '#e4405f',
+              },
+              {
+                icon: TwitterIcon,
+                href: 'https://twitter.com',
+                label: 'Twitter',
+                bgColor: '#1da1f2',
+              },
+              {
+                icon: LinkedInIcon,
+                href: 'https://linkedin.com',
+                label: 'LinkedIn',
+                bgColor: '#0077b5',
+              },
+            ].map(({ icon: Icon, href, label, bgColor }, index) => (
+              <Box
                 key={index}
+                sx={{
+                  position: 'relative',
+                  width: 50,
+                  height: 50,
+                  borderRadius: '50%',
+                  backgroundColor: '#fff',
+                  boxShadow: '0 10px 10px rgba(0,0,0,0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                  '&:hover': {
+                    backgroundColor: bgColor,
+                    color: '#fff',
+                  },
+                  '&:hover .tooltip': {
+                    top: '-45px',
+                    opacity: 1,
+                    pointerEvents: 'auto',
+                  },
+                }}
                 component="a"
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={{
-                  backgroundColor: '#000',
-                  color: '#fff',
-                  width: 40,
-                  height: 40,
-                  borderRadius: '50%',
-                  boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
-                  '&:hover': {
-                    backgroundColor: '#222',
-                  },
-                }}
               >
+                <Typography
+                  className="tooltip"
+                  sx={{
+                    position: 'absolute',
+                    top: 0,
+                    fontSize: '14px',
+                    background: bgColor,
+                    color: '#fff',
+                    px: 1,
+                    py: '2px',
+                    borderRadius: '5px',
+                    boxShadow: '0 10px 10px rgba(0, 0, 0, 0.1)',
+                    opacity: 0,
+                    transition: 'all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                    pointerEvents: 'none',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      height: '8px',
+                      width: '8px',
+                      background: bgColor,
+                      bottom: '-3px',
+                      left: '50%',
+                      transform: 'translateX(-50%) rotate(45deg)',
+                    },
+                  }}
+                >
+                  {label}
+                </Typography>
                 <Icon fontSize="small" />
-              </IconButton>
+              </Box>
             ))}
           </Box>
         </Grid>
