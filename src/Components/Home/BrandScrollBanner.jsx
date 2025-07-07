@@ -2,18 +2,17 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 const logos = [
-  { src: '/Assets/2K-Logo-3.svg', alt: '2K Games' },
-  { src: '/Assets/Assassins-Creed-Logo-2.svg', alt: 'Assassin\'s Creed' },
-  { src: '/Assets/Bloodborne-Logo-SVG_002.svg', alt: 'Bloodborne' },
-  { src: '/Assets/Elden-Ring-Logo.svg', alt: 'Elden Ring' },
-  { src: '/Assets/Call_of_Duty_logo-1.svg', alt: 'Call of Duty' },
-  { src: '/Assets/Far-Cry-4-Logo-2.svg', alt: 'Far Cry 4' },
-  { src: '/Assets/Grand-Theft-Auto-VI-SVG_007.svg', alt: 'GTA VI' },
-  { src: '/Assets/Miles-Morales-Logo-SVG_015.svg', alt: 'Miles Morales' },
+  { name: '2K Games', alt: '2K Games' },
+  { name: 'Assassin\'s Creed', alt: 'Assassin\'s Creed' },
+  { name: 'Bloodborne', alt: 'Bloodborne' },
+  { name: 'Elden Ring', alt: 'Elden Ring' },
+  { name: 'Call of Duty', alt: 'Call of Duty' },
+  { name: 'Far Cry 4', alt: 'Far Cry 4' },
+  { name: 'GTA VI', alt: 'GTA VI' },
+  { name: 'Miles Morales', alt: 'Miles Morales' },
 ];
 
 const BrandScrollBanner = () => {
-
   return (
     <Box
       sx={{
@@ -46,22 +45,39 @@ const BrandScrollBanner = () => {
         {[...logos, ...logos].map((logo, index) => (
           <Box
             key={index}
-            component="img"
-            src={logo.src}
-            alt={logo.alt}
             sx={{
               height: { xs: 40, md: 50 },
               width: 'auto',
               mx: 3,
-              objectFit: 'contain',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minWidth: 120,
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: 2,
+              px: 2,
               transition: 'transform 0.4s ease, filter 0.4s ease',
-              filter: 'brightness(0.8) invert(1) grayscale(1)',
+              filter: 'brightness(0.8)',
               '&:hover': {
-                filter: 'brightness(1) invert(0) grayscale(0)',
-                transform: 'scale(1.1)',
+                filter: 'brightness(1.2)',
+                transform: 'scale(1.05)',
+                backgroundColor: 'rgba(255, 255, 255, 0.15)',
               },
             }}
-          />
+          >
+            <Box
+              component="span"
+              sx={{
+                color: '#fff',
+                fontSize: { xs: '12px', md: '14px' },
+                fontWeight: 600,
+                textAlign: 'center',
+                fontFamily: "'Orbitron', sans-serif",
+              }}
+            >
+              {logo.name}
+            </Box>
+          </Box>
         ))}
       </Box>
     </Box>

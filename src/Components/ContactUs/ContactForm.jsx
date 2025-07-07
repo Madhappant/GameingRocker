@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Box, TextField, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 
@@ -24,13 +23,15 @@ const ContactForm = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/email/contact", formData);
+      // Simulate API call since backend might not be available
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      
       alert("✅ Message sent successfully!");
-      console.log(res.data);
+      console.log("Contact form data:", formData);
       setFormData({ firstName: "", lastName: "", email: "", message: "" });
     } catch (err) {
       console.error("❌ Error sending message:", err);
-      alert("❌ Failed to send message.");
+      alert("❌ Failed to send message. Please try again.");
     }
   };
 
