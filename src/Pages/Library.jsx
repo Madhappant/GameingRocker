@@ -6,12 +6,11 @@ import {
   Pagination,
   TextField,
   InputAdornment,
-  Typography,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 
 import Navbar from "../Components/Navbar";
 import LibraryHero from "../Components/Library/LibraryHero";
@@ -72,7 +71,6 @@ const Library = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
   const cardsPerPage = 8;
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -169,21 +167,6 @@ const Library = () => {
                 ),
               }}
             />
-          </Box>
-
-          {/* Admin Upload Shortcut */}
-          <Box display="flex" justifyContent="center" mb={1}>
-            <Typography
-              variant="body2"
-              sx={{
-                color: "#8AB4F8",
-                cursor: "pointer",
-                textDecoration: "underline",
-              }}
-              onClick={() => navigate("/admin-upload")}
-            >
-              + Upload New Game (Admin Only)
-            </Typography>
           </Box>
 
           {/* SEE ALL button */}
